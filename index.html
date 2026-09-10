@@ -106,78 +106,225 @@ nav{
 }
 
 
-/* =========================================================
-   HOME
-========================================================= */
+/* ================= PREMIUM HERO ================= */
 
 #home{
     min-height:88vh;
-
     display:flex;
     justify-content:center;
     align-items:center;
-
     text-align:center;
-
-    padding:50px 20px;
-
+    padding:70px 20px;
     position:relative;
     overflow:hidden;
+    background:
+        radial-gradient(circle at 50% 45%,
+        rgba(168,117,60,0.10),
+        transparent 45%);
 }
 
 .hero{
     max-width:900px;
     position:relative;
-    z-index:2;
+    z-index:5;
 }
 
 .hero-title{
-    font-size:64px;
+    font-size:72px;
     color:#4b2c1c;
-    margin-bottom:5px;
+    margin-bottom:4px;
+    letter-spacing:2px;
+    font-weight:600;
 }
 
 .hero-author{
-    font-size:23px;
-    color:#8a5a36;
-    margin-bottom:25px;
+    font-size:20px;
+    color:#9b6634;
+    margin-bottom:30px;
+    letter-spacing:4px;
 }
 
 .hero-description{
-    font-size:20px;
+    font-size:21px;
     max-width:700px;
     margin:auto;
     color:#5b4332;
+    line-height:2;
 }
 
 .hero-quote{
-    margin:30px auto;
+    margin:32px auto;
     font-size:18px;
     font-style:italic;
     color:#795548;
+    position:relative;
+    max-width:600px;
+}
+
+.hero-quote::before,
+.hero-quote::after{
+    content:"❦";
+    margin:0 14px;
+    color:#a8753c;
+    font-style:normal;
 }
 
 .hero-button{
     display:inline-block;
-
-    padding:12px 30px;
-
+    margin-top:8px;
+    padding:13px 32px;
     background:#6b4226;
-    color:white;
-
+    color:#fffaf1;
     border-radius:30px;
-
     text-decoration:none;
     cursor:pointer;
-
-    transition:0.3s;
+    transition:all 0.3s ease;
+    box-shadow:0 6px 18px rgba(70,40,20,0.18);
 }
 
 .hero-button:hover{
     background:#4b2c1c;
-    transform:translateY(-2px);
+    transform:translateY(-3px);
+    box-shadow:0 9px 22px rgba(70,40,20,0.25);
 }
 
+
+/* ================= FLOATING ELEMENTS ================= */
+
+.hero-leaf{
+    position:absolute;
+    top:-80px;
+    font-size:24px;
+    opacity:0.16;
+    pointer-events:none;
+    z-index:1;
+    animation:floatLeaf linear infinite;
+}
+
+.hero-leaf:nth-child(1){
+    left:8%;
+    animation-duration:14s;
+    animation-delay:1s;
+}
+
+.hero-leaf:nth-child(2){
+    left:28%;
+    font-size:18px;
+    animation-duration:18s;
+    animation-delay:5s;
+}
+
+.hero-leaf:nth-child(3){
+    left:52%;
+    font-size:22px;
+    animation-duration:16s;
+    animation-delay:2s;
+}
+
+.hero-leaf:nth-child(4){
+    left:76%;
+    font-size:17px;
+    animation-duration:20s;
+    animation-delay:7s;
+}
+
+.hero-leaf:nth-child(5){
+    left:91%;
+    font-size:25px;
+    animation-duration:15s;
+    animation-delay:4s;
+}
+
+@keyframes floatLeaf{
+
+    0%{
+        transform:translate(0,-30px) rotate(0deg);
+        opacity:0;
+    }
+
+    10%{
+        opacity:0.16;
+    }
+
+    35%{
+        transform:translate(35px,30vh) rotate(90deg);
+    }
+
+    65%{
+        transform:translate(-25px,65vh) rotate(190deg);
+    }
+
+    90%{
+        opacity:0.10;
+    }
+
+    100%{
+        transform:translate(30px,110vh) rotate(300deg);
+        opacity:0;
+    }
+}
+
+
+/* ================= SOFT LIGHT ================= */
+
+#home::before{
+    content:"";
+    position:absolute;
+    width:420px;
+    height:420px;
+    border-radius:50%;
+    background:rgba(180,130,70,0.06);
+    filter:blur(70px);
+    animation:softGlow 8s ease-in-out infinite alternate;
+    pointer-events:none;
+}
+
+@keyframes softGlow{
+
+    from{
+        transform:scale(0.9);
+        opacity:0.5;
+    }
+
+    to{
+        transform:scale(1.15);
+        opacity:1;
+    }
+}
+
+
+/* ================= MOBILE ================= */
+
+@media(max-width:700px){
+
+    #home{
+        min-height:82vh;
+        padding:60px 18px;
+    }
+
+    .hero-title{
+        font-size:48px;
+    }
+
+    .hero-author{
+        font-size:17px;
+        letter-spacing:3px;
+    }
+
+    .hero-description{
+        font-size:17px;
+        line-height:1.9;
+    }
+
+    .hero-quote{
+        font-size:16px;
+        line-height:1.7;
+    }
+
+    .hero-button{
+        padding:12px 27px;
+    }
+}
 
 /* =========================================================
    HOME DECORATIONS
@@ -1382,27 +1529,15 @@ footer strong{
 
 <section id="home">
 
-    <div class="feather one">
-        🪶
-    </div>
-
-    <div class="feather two">
-        🪶
-    </div>
-
-    <div class="bird one">
-        🕊️
-    </div>
-
-    <div class="bird two">
-        🕊️
-    </div>
-
-    <div class="books">
-        📚
-    </div>
+    <!-- Floating literary elements -->
+    <span class="hero-leaf">❧</span>
+    <span class="hero-leaf">✦</span>
+    <span class="hero-leaf">❧</span>
+    <span class="hero-leaf">✧</span>
+    <span class="hero-leaf">❧</span>
 
 
+    <!-- Hero Content -->
     <div class="hero">
 
         <h1 class="hero-title">
@@ -1415,19 +1550,16 @@ footer strong{
 
         <p class="hero-description">
             शब्दों की उस दुनिया में आपका स्वागत है,
-            जहाँ भावनाएँ कविता बनकर बहती हैं और
-            विचार शब्दों में अपना अस्तित्व पाते हैं।
+            जहाँ भावनाएँ कविता बनकर बहती हैं
+            और विचार अपना अस्तित्व पाते हैं।
         </p>
 
         <p class="hero-quote">
-            “शब्द वही, जो हृदय को छू जाएँ।”
+            “शब्द वही, जो हृदय को छू जाए।”
         </p>
 
-        <a
-            class="hero-button"
-            onclick="showPoems()"
-        >
-            कविताएँ पढ़ें
+        <a class="hero-button" onclick="showPoems()">
+            कविताओं में प्रवेश करें
         </a>
 
     </div>
