@@ -1293,6 +1293,151 @@ section{
     transform:translateY(-2px);
 }
 
+/* =========================================================
+   READING MODE POLISH
+========================================================= */
+
+/* Smooth appearance */
+
+#reader{
+    animation:readerAppear 0.6s ease;
+}
+
+@keyframes readerAppear{
+    from{
+        opacity:0;
+        transform:translateY(12px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+
+/* Soft floating feather animation */
+
+#reader::before{
+    animation:featherFloat 7s ease-in-out infinite;
+}
+
+#reader::after{
+    animation:featherFloatReverse 8s ease-in-out infinite;
+}
+
+@keyframes featherFloat{
+
+    0%,100%{
+        transform:rotate(-25deg) translateY(0);
+    }
+
+    50%{
+        transform:rotate(-18deg) translateY(-12px);
+    }
+}
+
+@keyframes featherFloatReverse{
+
+    0%,100%{
+        transform:rotate(25deg) translateY(0);
+    }
+
+    50%{
+        transform:rotate(18deg) translateY(-10px);
+    }
+}
+
+
+/* Paper subtle depth */
+
+.reader-box{
+    transition:
+        box-shadow 0.35s ease,
+        transform 0.35s ease;
+}
+
+.reader-box:hover{
+    transform:translateY(-2px);
+
+    box-shadow:
+        0 18px 45px
+        rgba(70,40,20,0.16);
+}
+
+
+/* Pen subtle floating */
+
+.reader-pen{
+    animation:penFloat 5s ease-in-out infinite;
+}
+
+@keyframes penFloat{
+
+    0%,100%{
+        transform:rotate(-25deg) translateY(0);
+    }
+
+    50%{
+        transform:rotate(-21deg) translateY(-5px);
+    }
+}
+
+
+/* Reading text refinement */
+
+.reader-content{
+    max-width:720px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+
+/* Mobile Reading Mode */
+
+@media(max-width:600px){
+
+    #reader{
+        padding:40px 12px;
+    }
+
+    .reader-box{
+        padding:
+            45px 22px 40px;
+    }
+
+    .reader-title{
+        font-size:32px;
+    }
+
+    .reader-author{
+        font-size:16px;
+    }
+
+    .reader-content{
+        font-size:18px;
+        line-height:2;
+        padding:0 4px 10px;
+    }
+
+    .reader-pen{
+        right:18px;
+        top:18px;
+        font-size:32px;
+    }
+
+    .reader-peacock{
+        left:18px;
+        bottom:18px;
+        font-size:32px;
+    }
+
+    #reader::before,
+    #reader::after{
+        font-size:100px;
+    }
+}
+
 
 /* =========================================================
    LOADING
