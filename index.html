@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 <html lang="hi">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
     <title>काव्य पवन | पवन आनंद</title>
 
@@ -12,584 +16,1032 @@
     <meta name="keywords"
           content="काव्य पवन, पवन आनंद, हिंदी कविता, हिंदी साहित्य, कविताएँ">
 
-    <meta name="author" content="पवन आनंद">
+    <meta name="author"
+          content="पवन आनंद">
 
-    <style>
 
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
-        }
+<style>
 
-        html{
-            scroll-behavior:smooth;
-        }
+    *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+    }
 
-        body{
-            font-family:Georgia, "Noto Serif Devanagari", serif;
-            background:#f5efe3;
-            color:#3b2618;
-            line-height:1.8;
-        }
 
-        /* ================= NAVBAR ================= */
+    html{
+        scroll-behavior:smooth;
+    }
+
+
+    body{
+        font-family:Georgia, "Noto Serif Devanagari", serif;
+        background:#f5efe3;
+        color:#3b2618;
+        line-height:1.8;
+    }
+
+
+    /* ================= NAVBAR ================= */
+
+    nav{
+        position:sticky;
+        top:0;
+        z-index:1000;
+        background:#3b2417;
+        padding:12px 6%;
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        box-shadow:0 3px 12px rgba(0,0,0,0.25);
+    }
+
+
+    .logo{
+        color:#f5d7a1;
+        font-size:25px;
+        font-weight:bold;
+        cursor:pointer;
+        letter-spacing:1px;
+    }
+
+
+    .nav-links{
+        display:flex;
+        gap:25px;
+        list-style:none;
+    }
+
+
+    .nav-links a{
+        color:#f8ead2;
+        text-decoration:none;
+        cursor:pointer;
+        font-size:16px;
+        transition:0.3s;
+    }
+
+
+    .nav-links a:hover{
+        color:#e4b86a;
+    }
+
+
+    /* ================= HOME ================= */
+
+    #home{
+        min-height:88vh;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        text-align:center;
+        padding:50px 20px;
+        position:relative;
+        overflow:hidden;
+    }
+
+
+    .hero{
+        max-width:900px;
+        position:relative;
+        z-index:2;
+    }
+
+
+    .hero-title{
+        font-size:64px;
+        color:#4b2c1c;
+        margin-bottom:5px;
+    }
+
+
+    .hero-author{
+        font-size:23px;
+        color:#8a5a36;
+        margin-bottom:25px;
+    }
+
+
+    .hero-description{
+        font-size:20px;
+        max-width:700px;
+        margin:auto;
+        color:#5b4332;
+    }
+
+
+    .hero-quote{
+        margin:30px auto;
+        font-size:18px;
+        font-style:italic;
+        color:#795548;
+    }
+
+
+    .hero-button{
+        display:inline-block;
+        padding:12px 30px;
+        background:#6b4226;
+        color:white;
+        border-radius:30px;
+        text-decoration:none;
+        cursor:pointer;
+        transition:0.3s;
+    }
+
+
+    .hero-button:hover{
+        background:#4b2c1c;
+        transform:translateY(-2px);
+    }
+
+
+    /* ================= DECORATIONS ================= */
+
+    .feather{
+        position:absolute;
+        font-size:90px;
+        opacity:0.08;
+        pointer-events:none;
+    }
+
+
+    .feather.one{
+        left:5%;
+        top:15%;
+        transform:rotate(-25deg);
+    }
+
+
+    .feather.two{
+        right:5%;
+        bottom:10%;
+        transform:rotate(25deg);
+    }
+
+
+    .bird{
+        position:absolute;
+        font-size:40px;
+        opacity:0.13;
+        pointer-events:none;
+    }
+
+
+    .bird.one{
+        top:15%;
+        left:15%;
+    }
+
+
+    .bird.two{
+        top:25%;
+        right:15%;
+    }
+
+
+    .books{
+        position:absolute;
+        bottom:0;
+        left:7%;
+        font-size:80px;
+        opacity:0.1;
+        pointer-events:none;
+    }
+
+
+    /* ================= SECTIONS ================= */
+
+    section{
+        padding:70px 7%;
+    }
+
+
+    .section-heading{
+        text-align:center;
+        margin-bottom:45px;
+    }
+
+
+    .section-heading h2{
+        font-size:40px;
+        color:#4b2c1c;
+    }
+
+
+    .section-heading p{
+        color:#795548;
+    }
+
+
+    .section-line{
+        width:70px;
+        height:3px;
+        background:#a8753c;
+        margin:12px auto;
+    }
+
+
+    /* ================= INDEX ================= */
+
+    #index{
+        display:none;
+    }
+
+
+    .index-list{
+        max-width:850px;
+        margin:auto;
+    }
+
+
+    /* PERMANENT SEARCH - ONLY INDEX */
+
+    .index-search{
+        max-width:850px;
+        margin:0 auto 18px;
+        display:flex;
+        gap:10px;
+        position:relative;
+    }
+
+
+    .index-search input{
+        flex:1;
+        padding:14px 52px 14px 18px;
+        border:1px solid #d5c2a5;
+        border-radius:10px;
+        background:#fffaf1;
+        color:#3b2618;
+        font-family:inherit;
+        font-size:16px;
+        outline:none;
+        box-shadow:0 3px 10px rgba(70,40,20,0.05);
+    }
+
+
+    .index-search input:focus{
+        border-color:#a8753c;
+        box-shadow:0 0 0 3px rgba(168,117,60,0.12);
+    }
+
+
+    .index-search input::placeholder{
+        color:#9a826d;
+    }
+
+
+    .index-search button{
+        padding:0 20px;
+        border:none;
+        border-radius:10px;
+        background:#6b4226;
+        color:white;
+        font-family:inherit;
+        cursor:pointer;
+        transition:0.3s;
+        font-size:15px;
+    }
+
+
+    .index-search button:hover{
+        background:#4b2c1c;
+    }
+
+
+    .index-search .clear-search{
+        position:absolute;
+        right:95px;
+        top:50%;
+        transform:translateY(-50%);
+        background:transparent;
+        color:#795548;
+        padding:2px 8px;
+        font-size:23px;
+        display:none;
+        z-index:2;
+    }
+
+
+    .index-search .clear-search:hover{
+        background:transparent;
+        color:#4b2c1c;
+    }
+
+
+    .index-search-result{
+        max-width:850px;
+        margin:0 auto 25px;
+        text-align:center;
+        color:#795548;
+        font-size:15px;
+        min-height:22px;
+    }
+
+
+    .index-item{
+        display:flex;
+        align-items:center;
+        gap:20px;
+        padding:18px 20px;
+        margin-bottom:12px;
+        background:#fffaf1;
+        border:1px solid #e2d2b8;
+        border-radius:10px;
+        cursor:pointer;
+        transition:0.3s;
+        box-shadow:0 3px 10px rgba(70,40,20,0.06);
+    }
+
+
+    .index-item:hover{
+        transform:translateX(6px);
+        border-color:#b7864d;
+        box-shadow:0 5px 15px rgba(70,40,20,0.12);
+    }
+
+
+    .index-number{
+        min-width:38px;
+        color:#a8753c;
+        font-size:18px;
+        font-weight:bold;
+    }
+
+
+    .index-title{
+        flex:1;
+        font-size:20px;
+        color:#4b2c1c;
+    }
+
+
+    .index-arrow{
+        font-size:24px;
+        color:#a8753c;
+    }
+
+
+    /* ================= POEMS ================= */
+
+    #poems{
+        background:#efe5d4;
+    }
+
+
+    .poem-grid{
+        display:grid;
+        grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+        gap:25px;
+    }
+
+
+    .poem-card{
+        background:#fffaf1;
+        border:1px solid #dfcdb0;
+        border-radius:12px;
+        padding:25px;
+        cursor:pointer;
+        transition:0.3s;
+        box-shadow:0 4px 12px rgba(70,40,20,0.08);
+    }
+
+
+    .poem-card:hover{
+        transform:translateY(-5px);
+        box-shadow:0 8px 20px rgba(70,40,20,0.15);
+    }
+
+
+    .poem-card h3{
+        color:#4b2c1c;
+        margin-bottom:12px;
+        font-size:24px;
+    }
+
+
+    .poem-preview{
+        white-space:pre-line;
+        color:#654c3a;
+        max-height:150px;
+        overflow:hidden;
+    }
+
+
+    .read-more{
+        display:inline-block;
+        margin-top:15px;
+        color:#9b6634;
+        font-weight:bold;
+    }
+
+
+    /* ================= ABOUT ================= */
+
+    #about{
+        text-align:center;
+        position:relative;
+        overflow:hidden;
+        isolation:isolate;
+    }
+
+
+    /*
+       Faded Peacock Watermark
+       पीछे हल्का printed peacock effect
+    */
+
+    #about::before{
+        content:"🦚";
+        position:absolute;
+        left:50%;
+        top:50%;
+        transform:translate(-50%,-50%);
+        font-size:420px;
+        opacity:0.045;
+        filter:grayscale(25%);
+        pointer-events:none;
+        z-index:-1;
+        line-height:1;
+    }
+
+
+    #about::after{
+        content:"";
+        position:absolute;
+        inset:0;
+        background:
+            radial-gradient(
+                circle at center,
+                rgba(255,250,241,0.10),
+                rgba(245,239,227,0.42)
+            );
+        pointer-events:none;
+        z-index:-1;
+    }
+
+
+    .about-box{
+        max-width:800px;
+        margin:auto;
+        font-size:19px;
+        color:#5c4635;
+        position:relative;
+        z-index:2;
+        background:rgba(255,250,241,0.48);
+        padding:30px;
+        border-radius:16px;
+        border:1px solid rgba(190,160,120,0.25);
+    }
+
+
+    .about-box p{
+        margin-bottom:18px;
+    }
+
+
+    .about-box strong{
+        font-size:28px;
+        color:#4b2c1c;
+    }
+
+
+    /* ================= LOGIN ================= */
+
+    #login{
+        display:none;
+        max-width:600px;
+        margin:auto;
+    }
+
+
+    .login-box{
+        background:#fffaf1;
+        padding:30px;
+        border-radius:12px;
+        border:1px solid #dfcdb0;
+        box-shadow:0 5px 20px rgba(70,40,20,0.1);
+    }
+
+
+    .login-box input{
+        width:100%;
+        padding:12px;
+        margin:8px 0;
+        border:1px solid #cdb99c;
+        border-radius:7px;
+        font-family:inherit;
+    }
+
+
+    .login-box button,
+    .admin-form button{
+        padding:11px 22px;
+        background:#6b4226;
+        color:white;
+        border:none;
+        border-radius:7px;
+        cursor:pointer;
+        margin-top:8px;
+    }
+
+
+    .login-box button:hover,
+    .admin-form button:hover{
+        background:#4b2c1c;
+    }
+
+
+    /* ================= ADMIN ================= */
+
+    #adminPanel{
+        display:none;
+        padding:50px 7%;
+        background:#e8dcc9;
+    }
+
+
+    .admin-box{
+        max-width:900px;
+        margin:auto;
+    }
+
+
+    .admin-form{
+        background:#fffaf1;
+        padding:25px;
+        border-radius:12px;
+        margin-bottom:30px;
+    }
+
+
+    .admin-form input,
+    .admin-form textarea{
+        width:100%;
+        padding:12px;
+        margin:8px 0;
+        border:1px solid #cdb99c;
+        border-radius:7px;
+        font-family:inherit;
+    }
+
+
+    .admin-form textarea{
+        min-height:200px;
+        resize:vertical;
+    }
+
+
+    .admin-poem{
+        background:#fffaf1;
+        padding:20px;
+        border-radius:10px;
+        margin-bottom:15px;
+    }
+
+
+    .admin-actions{
+        margin-top:10px;
+    }
+
+
+    .admin-actions button{
+        padding:8px 15px;
+        border:none;
+        border-radius:6px;
+        cursor:pointer;
+        margin-right:6px;
+    }
+
+
+    .edit-btn{
+        background:#c18b48;
+        color:white;
+    }
+
+
+    .delete-btn{
+        background:#9c3b2f;
+        color:white;
+    }
+
+
+    .logout-btn{
+        background:#4b2c1c;
+        color:white;
+    }
+
+
+    /* ================= BEAUTIFUL READER ================= */
+
+    #reader{
+        display:none;
+        min-height:90vh;
+        position:relative;
+        overflow:hidden;
+        background:
+            linear-gradient(
+                rgba(245,239,227,0.90),
+                rgba(245,239,227,0.90)
+            ),
+            repeating-linear-gradient(
+                0deg,
+                rgba(120,85,50,0.025) 0px,
+                rgba(120,85,50,0.025) 1px,
+                transparent 1px,
+                transparent 5px
+            );
+    }
+
+
+    /* Printed feather watermark */
+
+    #reader::before{
+        content:"🪶";
+        position:absolute;
+        left:4%;
+        top:8%;
+        font-size:230px;
+        opacity:0.055;
+        transform:rotate(-28deg);
+        pointer-events:none;
+    }
+
+
+    /* Printed peacock feather */
+
+    #reader::after{
+        content:"🪶  🦚";
+        position:absolute;
+        right:2%;
+        bottom:4%;
+        font-size:150px;
+        opacity:0.045;
+        transform:rotate(18deg);
+        pointer-events:none;
+        white-space:nowrap;
+    }
+
+
+    .reader-box{
+        max-width:900px;
+        margin:auto;
+        position:relative;
+        background:
+            linear-gradient(
+                rgba(255,250,241,0.97),
+                rgba(255,250,241,0.97)
+            ),
+            repeating-linear-gradient(
+                0deg,
+                rgba(100,70,40,0.025) 0px,
+                rgba(100,70,40,0.025) 1px,
+                transparent 1px,
+                transparent 4px
+            );
+        padding:55px 60px 50px;
+        border-radius:4px;
+        border:1px solid #d9c5a5;
+        box-shadow:
+            0 12px 35px rgba(70,40,20,0.13),
+            inset 0 0 35px rgba(145,105,60,0.045);
+        overflow:hidden;
+    }
+
+
+    /* Decorative printed corners */
+
+    .reader-box::before{
+        content:"❦";
+        position:absolute;
+        top:10px;
+        left:18px;
+        font-size:30px;
+        color:#a8753c;
+        opacity:0.35;
+    }
+
+
+    .reader-box::after{
+        content:"❦";
+        position:absolute;
+        bottom:8px;
+        right:18px;
+        font-size:30px;
+        color:#a8753c;
+        opacity:0.35;
+        transform:rotate(180deg);
+    }
+
+
+    .reader-title{
+        text-align:center;
+        font-size:40px;
+        color:#3f281b;
+        margin-bottom:5px;
+        font-weight:bold;
+        letter-spacing:0.3px;
+    }
+
+
+    .reader-author{
+        text-align:center;
+        color:#7a4d2e;
+        font-size:19px;
+        font-weight:bold;
+        margin-bottom:18px;
+    }
+
+
+    .reader-ornament{
+        text-align:center;
+        color:#a8753c;
+        font-size:23px;
+        letter-spacing:7px;
+        margin-bottom:35px;
+    }
+
+
+    .reader-content{
+        white-space:pre-line;
+        font-size:21px;
+        line-height:2.15;
+        color:#4c392b;
+        text-align:center;
+        position:relative;
+        z-index:2;
+    }
+
+
+    .reader-signature{
+        margin-top:38px;
+        text-align:right;
+        color:#6b4226;
+        font-size:18px;
+        font-weight:bold;
+        font-style:italic;
+    }
+
+
+    .back-button{
+        display:block;
+        width:max-content;
+        margin:40px auto 0;
+        padding:10px 27px;
+        background:#6b4226;
+        color:white;
+        border-radius:25px;
+        cursor:pointer;
+        transition:0.3s;
+    }
+
+
+    .back-button:hover{
+        background:#4b2c1c;
+        transform:translateY(-2px);
+    }
+
+
+    /* ================= LOADING ================= */
+
+    .loading{
+        text-align:center;
+        color:#795548;
+        padding:30px;
+    }
+
+
+    /* ================= NO SEARCH RESULT ================= */
+
+    .no-search-result{
+        text-align:center;
+        padding:35px 20px;
+        color:#795548;
+        background:#fffaf1;
+        border:1px dashed #d5c2a5;
+        border-radius:10px;
+    }
+
+
+    /* ================= FOOTER ================= */
+
+    footer{
+        background:#3b2417;
+        color:#ead8bd;
+        text-align:center;
+        padding:30px 15px;
+    }
+
+
+    footer strong{
+        color:#f0c982;
+    }
+
+
+    /* ================= MOBILE ================= */
+
+    @media(max-width:700px){
 
         nav{
-            position:sticky;
-            top:0;
-            z-index:1000;
-            background:#3b2417;
-            padding:12px 6%;
-            display:flex;
-            justify-content:space-between;
-            align-items:center;
-            box-shadow:0 3px 12px rgba(0,0,0,0.25);
+            flex-direction:column;
+            gap:10px;
         }
 
-        .logo{
-            color:#f5d7a1;
-            font-size:25px;
-            font-weight:bold;
-            cursor:pointer;
-            letter-spacing:1px;
-        }
 
         .nav-links{
-            display:flex;
-            gap:25px;
-            list-style:none;
+            gap:14px;
+            flex-wrap:wrap;
+            justify-content:center;
         }
+
 
         .nav-links a{
-            color:#f8ead2;
-            text-decoration:none;
-            cursor:pointer;
-            font-size:16px;
-            transition:0.3s;
+            font-size:14px;
         }
 
-        .nav-links a:hover{
-            color:#e4b86a;
-        }
-
-        /* ================= HOME ================= */
-
-        #home{
-            min-height:88vh;
-            display:flex;
-            justify-content:center;
-            align-items:center;
-            text-align:center;
-            padding:50px 20px;
-            position:relative;
-            overflow:hidden;
-        }
-
-        .hero{
-            max-width:900px;
-            position:relative;
-            z-index:2;
-        }
 
         .hero-title{
-            font-size:64px;
-            color:#4b2c1c;
-            margin-bottom:5px;
+            font-size:45px;
         }
+
 
         .hero-author{
-            font-size:23px;
-            color:#8a5a36;
-            margin-bottom:25px;
+            font-size:20px;
         }
+
 
         .hero-description{
-            font-size:20px;
-            max-width:700px;
-            margin:auto;
-            color:#5b4332;
+            font-size:17px;
         }
 
-        .hero-quote{
-            margin:30px auto;
-            font-size:18px;
-            font-style:italic;
-            color:#795548;
-        }
-
-        .hero-button{
-            display:inline-block;
-            padding:12px 30px;
-            background:#6b4226;
-            color:white;
-            border-radius:30px;
-            text-decoration:none;
-            cursor:pointer;
-            transition:0.3s;
-        }
-
-        .hero-button:hover{
-            background:#4b2c1c;
-            transform:translateY(-2px);
-        }
-
-        /* ================= DECORATIONS ================= */
-
-        .feather{
-            position:absolute;
-            font-size:90px;
-            opacity:0.08;
-        }
-
-        .feather.one{
-            left:5%;
-            top:15%;
-            transform:rotate(-25deg);
-        }
-
-        .feather.two{
-            right:5%;
-            bottom:10%;
-            transform:rotate(25deg);
-        }
-
-        .bird{
-            position:absolute;
-            font-size:40px;
-            opacity:0.13;
-        }
-
-        .bird.one{
-            top:15%;
-            left:15%;
-        }
-
-        .bird.two{
-            top:25%;
-            right:15%;
-        }
-
-        .books{
-            position:absolute;
-            bottom:0;
-            left:7%;
-            font-size:80px;
-            opacity:0.1;
-        }
-
-        /* ================= SECTIONS ================= */
-
-        section{
-            padding:70px 7%;
-        }
-
-        .section-heading{
-            text-align:center;
-            margin-bottom:45px;
-        }
 
         .section-heading h2{
-            font-size:40px;
-            color:#4b2c1c;
+            font-size:32px;
         }
 
-        .section-heading p{
-            color:#795548;
+
+        section{
+            padding:55px 5%;
         }
 
-        .section-line{
-            width:70px;
-            height:3px;
-            background:#a8753c;
-            margin:12px auto;
+
+        /* Search mobile */
+
+        .index-search{
+            flex-direction:column;
+            gap:8px;
         }
 
-        /* ================= INDEX ================= */
 
-        #index{
-            display:none;
+        .index-search input{
+            width:100%;
         }
 
-        .index-list{
-            max-width:850px;
-            margin:auto;
+
+        .index-search button:not(.clear-search){
+            min-height:45px;
         }
 
-        .index-item{
-            display:flex;
-            align-items:center;
-            gap:20px;
-            padding:18px 20px;
-            margin-bottom:12px;
-            background:#fffaf1;
-            border:1px solid #e2d2b8;
-            border-radius:10px;
-            cursor:pointer;
-            transition:0.3s;
-            box-shadow:0 3px 10px rgba(70,40,20,0.06);
+
+        .index-search .clear-search{
+            right:10px;
+            top:23px;
         }
 
-        .index-item:hover{
-            transform:translateX(6px);
-            border-color:#b7864d;
-            box-shadow:0 5px 15px rgba(70,40,20,0.12);
-        }
 
-        .index-number{
-            min-width:38px;
-            color:#a8753c;
-            font-size:18px;
-            font-weight:bold;
-        }
-
-        .index-title{
-            flex:1;
-            font-size:20px;
-            color:#4b2c1c;
-        }
-
-        .index-arrow{
-            font-size:24px;
-            color:#a8753c;
-        }
-
-        /* ================= POEMS ================= */
-
-        #poems{
-            background:#efe5d4;
-        }
-
-        .poem-grid{
-            display:grid;
-            grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-            gap:25px;
-        }
-
-        .poem-card{
-            background:#fffaf1;
-            border:1px solid #dfcdb0;
-            border-radius:12px;
-            padding:25px;
-            cursor:pointer;
-            transition:0.3s;
-            box-shadow:0 4px 12px rgba(70,40,20,0.08);
-        }
-
-        .poem-card:hover{
-            transform:translateY(-5px);
-            box-shadow:0 8px 20px rgba(70,40,20,0.15);
-        }
-
-        .poem-card h3{
-            color:#4b2c1c;
-            margin-bottom:12px;
-            font-size:24px;
-        }
-
-        .poem-preview{
-            white-space:pre-line;
-            color:#654c3a;
-            max-height:150px;
-            overflow:hidden;
-        }
-
-        .read-more{
-            display:inline-block;
-            margin-top:15px;
-            color:#9b6634;
-            font-weight:bold;
-        }
-
-        /* ================= ABOUT ================= */
-
-        #about{
-            text-align:center;
-        }
-
-        .about-box{
-            max-width:800px;
-            margin:auto;
-            font-size:19px;
-            color:#5c4635;
-        }
-
-        .about-box p{
+        .index-search-result{
             margin-bottom:18px;
         }
 
-        /* ================= LOGIN ================= */
 
-        #login{
-            display:none;
-            max-width:600px;
-            margin:auto;
-        }
-
-        .login-box{
-            background:#fffaf1;
-            padding:30px;
-            border-radius:12px;
-            border:1px solid #dfcdb0;
-            box-shadow:0 5px 20px rgba(70,40,20,0.1);
-        }
-
-        .login-box input{
-            width:100%;
-            padding:12px;
-            margin:8px 0;
-            border:1px solid #cdb99c;
-            border-radius:7px;
-            font-family:inherit;
-        }
-
-        .login-box button,
-        .admin-form button{
-            padding:11px 22px;
-            background:#6b4226;
-            color:white;
-            border:none;
-            border-radius:7px;
-            cursor:pointer;
-            margin-top:8px;
-        }
-
-        .login-box button:hover,
-        .admin-form button:hover{
-            background:#4b2c1c;
-        }
-
-        /* ================= ADMIN ================= */
-
-        #adminPanel{
-            display:none;
-            padding:50px 7%;
-            background:#e8dcc9;
-        }
-
-        .admin-box{
-            max-width:900px;
-            margin:auto;
-        }
-
-        .admin-form{
-            background:#fffaf1;
-            padding:25px;
-            border-radius:12px;
-            margin-bottom:30px;
-        }
-
-        .admin-form input,
-        .admin-form textarea{
-            width:100%;
-            padding:12px;
-            margin:8px 0;
-            border:1px solid #cdb99c;
-            border-radius:7px;
-            font-family:inherit;
-        }
-
-        .admin-form textarea{
-            min-height:200px;
-            resize:vertical;
-        }
-
-        .admin-poem{
-            background:#fffaf1;
-            padding:20px;
-            border-radius:10px;
-            margin-bottom:15px;
-        }
-
-        .admin-actions{
-            margin-top:10px;
-        }
-
-        .admin-actions button{
-            padding:8px 15px;
-            border:none;
-            border-radius:6px;
-            cursor:pointer;
-            margin-right:6px;
-        }
-
-        .edit-btn{
-            background:#c18b48;
-            color:white;
-        }
-
-        .delete-btn{
-            background:#9c3b2f;
-            color:white;
-        }
-
-        .logout-btn{
-            background:#4b2c1c;
-            color:white;
-        }
-
-        /* ================= READER ================= */
-
-        #reader{
-            display:none;
-            min-height:80vh;
-        }
+        /* Reader mobile */
 
         .reader-box{
-            max-width:850px;
-            margin:auto;
-            background:#fffaf1;
-            padding:45px;
-            border-radius:14px;
-            border:1px solid #dfcdb0;
-            box-shadow:0 5px 20px rgba(70,40,20,0.1);
+            padding:42px 18px 35px;
         }
+
 
         .reader-title{
-            text-align:center;
-            font-size:38px;
-            color:#4b2c1c;
-            margin-bottom:30px;
+            font-size:30px;
+            line-height:1.4;
         }
+
+
+        .reader-author{
+            font-size:17px;
+        }
+
 
         .reader-content{
-            white-space:pre-line;
-            font-size:20px;
-            color:#4c392b;
-            text-align:center;
+            font-size:18px;
+            line-height:2;
         }
 
-        .back-button{
-            display:block;
-            width:max-content;
-            margin:35px auto 0;
-            padding:10px 25px;
-            background:#6b4226;
-            color:white;
-            border-radius:25px;
-            cursor:pointer;
+
+        .reader-signature{
+            font-size:16px;
         }
 
-        /* ================= LOADING ================= */
 
-        .loading{
-            text-align:center;
-            color:#795548;
-            padding:30px;
+        #reader::before{
+            font-size:140px;
         }
 
-        /* ================= FOOTER ================= */
 
-        footer{
-            background:#3b2417;
-            color:#ead8bd;
-            text-align:center;
-            padding:30px 15px;
+        #reader::after{
+            font-size:90px;
         }
 
-        footer strong{
-            color:#f0c982;
+
+        /* About mobile */
+
+        #about::before{
+            font-size:250px;
         }
 
-        /* ================= MOBILE ================= */
 
-        @media(max-width:700px){
-
-            nav{
-                flex-direction:column;
-                gap:10px;
-            }
-
-            .nav-links{
-                gap:14px;
-                flex-wrap:wrap;
-                justify-content:center;
-            }
-
-            .nav-links a{
-                font-size:14px;
-            }
-
-            .hero-title{
-                font-size:45px;
-            }
-
-            .hero-author{
-                font-size:20px;
-            }
-
-            .hero-description{
-                font-size:17px;
-            }
-
-            .section-heading h2{
-                font-size:32px;
-            }
-
-            section{
-                padding:55px 5%;
-            }
-
-            .reader-box{
-                padding:25px 15px;
-            }
-
-            .reader-title{
-                font-size:30px;
-            }
-
-            .reader-content{
-                font-size:18px;
-            }
-
-            .index-item{
-                padding:15px;
-                gap:12px;
-            }
-
-            .index-title{
-                font-size:17px;
-            }
-
-            .index-number{
-                min-width:30px;
-            }
-
+        .about-box{
+            padding:22px 17px;
+            font-size:17px;
         }
 
-    </style>
+
+        .about-box strong{
+            font-size:24px;
+        }
+
+
+        .index-item{
+            padding:15px;
+            gap:12px;
+        }
+
+
+        .index-title{
+            font-size:17px;
+        }
+
+
+        .index-number{
+            min-width:30px;
+        }
+
+    }
+
+</style>
+
 </head>
 
+
 <body>
+
 
 <!-- ================= NAVBAR ================= -->
 
 <nav>
 
-    <div class="logo" onclick="showHome()">
+    <div class="logo"
+         onclick="showHome()">
+
         काव्य पवन
+
     </div>
+
 
     <ul class="nav-links">
 
         <li>
-            <a onclick="showHome()">मुखपृष्ठ</a>
+            <a onclick="showHome()">
+                मुखपृष्ठ
+            </a>
         </li>
 
-        <li>
-            <a onclick="showIndex()">काव्य-सूची</a>
-        </li>
 
         <li>
-            <a onclick="showPoems()">कविताएँ</a>
+            <a onclick="showIndex()">
+                काव्य-सूची
+            </a>
         </li>
 
-        <li>
-            <a onclick="showAbout()">परिचय</a>
-        </li>
 
         <li>
-            <a onclick="showLogin()">रचनाकार</a>
+            <a onclick="showPoems()">
+                कविताएँ
+            </a>
+        </li>
+
+
+        <li>
+            <a onclick="showAbout()">
+                परिचय
+            </a>
+        </li>
+
+
+        <li>
+            <a onclick="showLogin()">
+                रचनाकार
+            </a>
         </li>
 
     </ul>
@@ -601,37 +1053,68 @@
 
 <section id="home">
 
-    <div class="feather one">🪶</div>
-    <div class="feather two">🪶</div>
 
-    <div class="bird one">🕊️</div>
-    <div class="bird two">🕊️</div>
+    <div class="feather one">
+        🪶
+    </div>
 
-    <div class="books">📚</div>
+
+    <div class="feather two">
+        🪶
+    </div>
+
+
+    <div class="bird one">
+        🕊️
+    </div>
+
+
+    <div class="bird two">
+        🕊️
+    </div>
+
+
+    <div class="books">
+        📚
+    </div>
+
 
     <div class="hero">
+
 
         <h1 class="hero-title">
             काव्य पवन
         </h1>
 
+
         <div class="hero-author">
             पवन आनंद
         </div>
 
+
         <p class="hero-description">
+
             शब्दों की उस दुनिया में आपका स्वागत है,
             जहाँ भावनाएँ कविता बनकर बहती हैं और
             विचार शब्दों में अपना अस्तित्व पाते हैं।
+
         </p>
+
 
         <p class="hero-quote">
+
             “शब्द वही, जो हृदय को छू जाएँ।”
+
         </p>
 
-        <a class="hero-button" onclick="showPoems()">
+
+        <a class="hero-button"
+           onclick="showPoems()">
+
             कविताएँ पढ़ें
+
         </a>
+
 
     </div>
 
@@ -642,27 +1125,81 @@
 
 <section id="index">
 
+
     <div class="section-heading">
+
 
         <h2>
             काव्य-सूची
         </h2>
 
+
         <p>
             मेरी सभी रचनाओं की सूची
         </p>
 
+
         <div class="section-line"></div>
 
+
     </div>
 
-    <div id="indexList" class="index-list">
+
+    <!-- PERMANENT SEARCH ONLY HERE -->
+
+    <div class="index-search">
+
+
+        <input
+            type="search"
+            id="indexSearch"
+            placeholder="कविता का नाम या कोई शब्द खोजें..."
+            autocomplete="off"
+            oninput="searchIndexPoems()"
+        >
+
+
+        <button
+            class="clear-search"
+            id="clearIndexSearch"
+            onclick="clearIndexSearch()"
+            title="खोज साफ करें">
+
+            ×
+
+        </button>
+
+
+        <button
+            onclick="searchIndexPoems()">
+
+            🔍 खोजें
+
+        </button>
+
+
+    </div>
+
+
+    <div
+        id="indexSearchResult"
+        class="index-search-result">
+    </div>
+
+
+    <div id="indexList"
+         class="index-list">
+
 
         <div class="loading">
+
             रचनाएँ लोड हो रही हैं...
+
         </div>
 
+
     </div>
+
 
 </section>
 
@@ -670,6 +1207,18 @@
 <!-- ================= POEMS ================= -->
 
 <section id="poems">
+
+
+    <div class="section-heading">
+
+
+        <h2>
+            कविताएँ
+        </h2>
+
+
+        <p>
+      <section id="poems">
 
     <div class="section-heading">
 
@@ -685,10 +1234,14 @@
 
     </div>
 
-    <div id="poemGrid" class="poem-grid">
+
+    <div id="poemGrid"
+         class="poem-grid">
 
         <div class="loading">
+
             रचनाएँ लोड हो रही हैं...
+
         </div>
 
     </div>
@@ -700,29 +1253,41 @@
 
 <section id="about">
 
+
     <div class="section-heading">
 
         <h2>
             परिचय
         </h2>
 
+        <p>
+            रचनाकार के बारे में
+        </p>
+
         <div class="section-line"></div>
 
     </div>
 
+
     <div class="about-box">
 
         <p>
-            <strong>पवन आनंद</strong>
+            <strong>
+                पवन आनंद
+            </strong>
         </p>
+
 
         <p>
             शब्दों और भावनाओं के संसार में आपका स्वागत है।
         </p>
 
+
         <p>
-            काव्य पवन मेरी साहित्यिक अभिव्यक्ति का एक छोटा-सा प्रयास है जहाँ कविताएँ, विचार और एहसास शब्दों का रूप लेते हैं।
+            काव्य पवन मेरी साहित्यिक अभिव्यक्ति का एक छोटा-सा प्रयास है जहाँ
+            कविताएँ, विचार और एहसास शब्दों का रूप लेते हैं।
         </p>
+
 
         <p>
             हर रचना अपने भीतर एक भाव, एक कहानी और एक एहसास समेटे हुए है।
@@ -737,6 +1302,7 @@
 
 <section id="login">
 
+
     <div class="section-heading">
 
         <h2>
@@ -744,32 +1310,39 @@
         </h2>
 
         <p>
-            Admin Login
+            केवल रचनाकार के लिए
         </p>
 
         <div class="section-line"></div>
 
     </div>
 
+
     <div class="login-box">
+
 
         <input
             type="email"
-            id="loginEmail"
-            placeholder="Email"
-        >
+            id="adminEmail"
+            placeholder="ईमेल">
+
 
         <input
             type="password"
-            id="loginPassword"
-            placeholder="Password"
-        >
+            id="adminPassword"
+            placeholder="पासवर्ड">
 
-        <button onclick="loginAdmin()">
+
+        <button
+            onclick="loginAdmin()">
+
             Login
+
         </button>
 
+
         <p id="loginMessage"></p>
+
 
     </div>
 
@@ -780,88 +1353,127 @@
 
 <section id="adminPanel">
 
+
+    <div class="section-heading">
+
+        <h2>
+            रचनाकार पैनल
+        </h2>
+
+        <p>
+            अपनी रचनाओं को जोड़ें और प्रबंधित करें
+        </p>
+
+        <div class="section-line"></div>
+
+    </div>
+
+
     <div class="admin-box">
-
-        <div class="section-heading">
-
-            <h2>
-                रचनाकार पैनल
-            </h2>
-
-            <div class="section-line"></div>
-
-        </div>
 
 
         <div class="admin-form">
 
+
             <input
                 type="text"
                 id="poemTitle"
-                placeholder="कविता का शीर्षक"
-            >
+                placeholder="कविता का शीर्षक">
+
 
             <textarea
                 id="poemText"
-                placeholder="कविता लिखें..."
-            ></textarea>
+                placeholder="कविता लिखें..."></textarea>
 
-            <button onclick="savePoem()">
-                कविता सहेजें
-            </button>
 
             <button
-                onclick="cancelEdit()"
-                id="cancelEditBtn"
-                style="display:none;"
-            >
-                Cancel
+                id="savePoemBtn"
+                onclick="savePoem()">
+
+                रचना सहेजें
+
             </button>
 
+
             <button
-                onclick="logoutAdmin()"
+                onclick="cancelEdit()">
+
+                रद्द करें
+
+            </button>
+
+
+            <button
                 class="logout-btn"
-            >
+                onclick="logoutAdmin()">
+
                 Logout
+
             </button>
+
 
         </div>
 
 
         <div id="adminPoems">
 
-            <div class="loading">
-                रचनाएँ लोड हो रही हैं...
-            </div>
-
         </div>
+
 
     </div>
 
 </section>
 
 
-<!-- ================= READER ================= -->
+<!-- ================= BEAUTIFUL READER ================= -->
 
 <section id="reader">
 
+
     <div class="reader-box">
+
 
         <h2
             id="readerTitle"
             class="reader-title">
         </h2>
 
+
+        <div class="reader-author">
+
+            पवन आनंद
+
+        </div>
+
+
+        <div class="reader-ornament">
+
+            🪶 ❦ 🖋
+
+        </div>
+
+
         <div
             id="readerContent"
             class="reader-content">
         </div>
 
+
+        <div class="reader-signature">
+
+            — पवन आनंद
+
+        </div>
+
+
         <div
             class="back-button"
             onclick="backToPoems()">
+
             ← वापस कविताओं पर
+
         </div>
+
 
     </div>
 
@@ -873,100 +1485,103 @@
 <footer>
 
     <p>
-        © 2026 <strong>काव्य पवन</strong>
+        © 2026
+        <strong>काव्य पवन</strong>
+        | पवन आनंद
     </p>
 
     <p>
-        पवन आनंद द्वारा रचित
+        शब्दों से भावों तक...
     </p>
 
 </footer>
 
 
-<!-- ================= FIREBASE ================= -->
+
+<!-- ================= FIREBASE + JAVASCRIPT ================= -->
 
 <script type="module">
 
-    import {
-        initializeApp
-    } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js";
 
-    import {
-        getAuth,
-        signInWithEmailAndPassword,
-        signOut,
-        onAuthStateChanged
-    } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-auth.js";
-
-    import {
-        getFirestore,
-        collection,
-        addDoc,
-        updateDoc,
-        deleteDoc,
-        doc,
-        onSnapshot,
-        serverTimestamp
-    } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-firestore.js";
+import {
+    initializeApp
+} from "https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js";
 
 
-    /* ================= FIREBASE CONFIG ================= */
-
-    const firebaseConfig = {
-
-        apiKey:
-            "AIzaSyAiy2q4FQFuTrQgG8Agsr2SdJwwGrR8hq0",
-
-        authDomain:
-            "pawan-anand.firebaseapp.com",
-
-        projectId:
-            "pawan-anand",
-
-        storageBucket:
-            "pawan-anand.firebasestorage.app",
-
-        messagingSenderId:
-            "362675285140",
-
-        appId:
-            "1:362675285140:web:a88721c0f11ed808f51881",
-
-        measurementId:
-            "G-J2EE1S2WEW"
-
-    };
+import {
+    getFirestore,
+    collection,
+    addDoc,
+    updateDoc,
+    deleteDoc,
+    doc,
+    onSnapshot
+} from "https://www.gstatic.com/firebasejs/12.2.1/firebase-firestore.js";
 
 
-    const app = initializeApp(firebaseConfig);
-
-    const auth = getAuth(app);
-
-    const db = getFirestore(app);
-
-
-    /* ================= VARIABLES ================= */
-
-    let currentUser = null;
-
-    let poems = [];
-
-    let editingId = null;
+import {
+    getAuth,
+    signInWithEmailAndPassword,
+    onAuthStateChanged,
+    signOut
+} from "https://www.gstatic.com/firebasejs/12.2.1/firebase-auth.js";
 
 
-    const ADMIN_EMAIL =
-        "yadavpky3533@gmail.com";
+
+/* ================= FIREBASE CONFIG ================= */
+
+/*
+   यहाँ अपना वही Firebase config रखना
+   जो तुम्हारे पहले वाले working code में था।
+*/
+
+const firebaseConfig = {
+
+    apiKey: "YOUR_API_KEY",
+
+    authDomain: "YOUR_AUTH_DOMAIN",
+
+    projectId: "YOUR_PROJECT_ID",
+
+    storageBucket: "YOUR_STORAGE_BUCKET",
+
+    messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+
+    appId: "YOUR_APP_ID"
+
+};
 
 
-    /* ================= ORIGINAL POEM ================= */
 
-    const originalPoem = {
+const app =
+    initializeApp(firebaseConfig);
 
-        id: "original-poem",
 
-        title: "मिलना था हमें तुमसे...",
+const db =
+    getFirestore(app);
 
-        text: `मिलना था हमें वक़्त-ए-फ़ुर्सत पर बैठ कर
+
+const auth =
+    getAuth(app);
+
+
+
+/* ================= ADMIN ================= */
+
+const ADMIN_EMAIL =
+    "yadavpky3533@gmail.com";
+
+
+
+/* ================= ORIGINAL POEM ================= */
+
+const originalPoem = {
+
+    id: "original-poem",
+
+    title: "मिलना था हमें तुमसे...",
+
+    text: `मिलना था हमें वक़्त-ए-फ़ुर्सत पर बैठ कर
 करनी थी गुफ्तगू तेरी आदत पर बैठ कर
 
 इत्तिला थी कि तुम हमसे बेज़ार हो रहे
@@ -981,680 +1596,1050 @@
 निकलें जो अश्क़ चश्म-ए-नम से अब मेरे
 सीचें गुल-ओ-शजर तेरी तुर्बत पर बैठ कर`
 
-    };
+};
 
 
-    /* ================= SECURITY ================= */
 
-    function escapeHTML(text){
+/* ================= VARIABLES ================= */
 
-        const div =
-            document.createElement("div");
+let poems = [];
 
-        div.textContent = text;
-
-        return div.innerHTML;
-
-    }
+let editingId = null;
 
 
-    function formatPoem(text){
 
-        return escapeHTML(text);
+/* ================= SECURITY ================= */
 
-    }
+function escapeHTML(value){
 
+    return String(value ?? "")
 
-    /* ================= NAVIGATION ================= */
+        .replace(/&/g,"&amp;")
 
-    window.showHome = function(){
+        .replace(/</g,"&lt;")
 
-        document.getElementById("home").style.display = "flex";
+        .replace(/>/g,"&gt;")
 
-        document.getElementById("index").style.display = "none";
+        .replace(/"/g,"&quot;")
 
-        document.getElementById("poems").style.display = "none";
+        .replace(/'/g,"&#039;");
 
-        document.getElementById("about").style.display = "none";
-
-        document.getElementById("login").style.display = "none";
-
-        document.getElementById("adminPanel").style.display = "none";
-
-        document.getElementById("reader").style.display = "none";
-
-        window.location.hash = "home";
-
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
-
-    };
+}
 
 
-    window.showIndex = function(){
 
-        document.getElementById("home").style.display = "flex";
+function formatPoem(text){
 
-        document.getElementById("index").style.display = "block";
+    return escapeHTML(text || "");
 
-        document.getElementById("poems").style.display = "none";
+}
 
-        document.getElementById("about").style.display = "none";
 
-        document.getElementById("login").style.display = "none";
 
-        document.getElementById("adminPanel").style.display = "none";
+/* ================= SHOW HOME ================= */
 
-        document.getElementById("reader").style.display = "none";
+window.showHome = function(){
 
-        renderIndex();
+    document.getElementById("home").style.display =
+        "flex";
 
-        window.location.hash = "index";
+    document.getElementById("index").style.display =
+        "none";
 
-        setTimeout(() => {
+    document.getElementById("poems").style.display =
+        "none";
 
-            document.getElementById("index").scrollIntoView({
-                behavior: "smooth"
+    document.getElementById("about").style.display =
+        "none";
+
+    document.getElementById("login").style.display =
+        "none";
+
+    document.getElementById("adminPanel").style.display =
+        "none";
+
+    document.getElementById("reader").style.display =
+        "none";
+
+
+    window.location.hash = "home";
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+};
+
+
+
+/* ================= SHOW INDEX ================= */
+
+window.showIndex = function(){
+
+    document.getElementById("home").style.display =
+        "flex";
+
+    document.getElementById("index").style.display =
+        "block";
+
+    document.getElementById("poems").style.display =
+        "none";
+
+    document.getElementById("about").style.display =
+        "none";
+
+    document.getElementById("login").style.display =
+        "none";
+
+    document.getElementById("adminPanel").style.display =
+        "none";
+
+    document.getElementById("reader").style.display =
+        "none";
+
+
+    renderIndex(
+        getFilteredIndexPoems()
+    );
+
+
+    window.location.hash = "index";
+
+
+    setTimeout(() => {
+
+        document
+            .getElementById("index")
+            .scrollIntoView({
+                behavior:"smooth"
             });
 
-        }, 100);
+    },100);
 
-    };
+};
 
 
-    window.showPoems = function(){
 
-        document.getElementById("home").style.display = "none";
+/* ================= SHOW POEMS ================= */
 
-        document.getElementById("index").style.display = "none";
+window.showPoems = function(){
 
-        document.getElementById("poems").style.display = "block";
+    document.getElementById("home").style.display =
+        "flex";
 
-        document.getElementById("about").style.display = "none";
+    document.getElementById("index").style.display =
+        "none";
 
-        document.getElementById("login").style.display = "none";
+    document.getElementById("poems").style.display =
+        "block";
 
-        document.getElementById("adminPanel").style.display = "none";
+    document.getElementById("about").style.display =
+        "none";
 
-        document.getElementById("reader").style.display = "none";
+    document.getElementById("login").style.display =
+        "none";
 
-        window.location.hash = "poems";
+    document.getElementById("adminPanel").style.display =
+        "none";
 
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
+    document.getElementById("reader").style.display =
+        "none";
 
-    };
 
+    renderPoems();
 
-    window.showAbout = function(){
 
-        document.getElementById("home").style.display = "none";
+    window.location.hash = "poems";
 
-        document.getElementById("index").style.display = "none";
 
-        document.getElementById("poems").style.display = "none";
+    setTimeout(() => {
 
-        document.getElementById("about").style.display = "block";
+        document
+            .getElementById("poems")
+            .scrollIntoView({
+                behavior:"smooth"
+            });
 
-        document.getElementById("login").style.display = "none";
+    },100);
 
-        document.getElementById("adminPanel").style.display = "none";
+};
 
-        document.getElementById("reader").style.display = "none";
 
-        window.location.hash = "about";
 
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
+/* ================= SHOW ABOUT ================= */
 
-    };
+window.showAbout = function(){
 
+    document.getElementById("home").style.display =
+        "flex";
 
-    window.showLogin = function(){
+    document.getElementById("index").style.display =
+        "none";
 
-        document.getElementById("home").style.display = "none";
+    document.getElementById("poems").style.display =
+        "none";
 
-        document.getElementById("index").style.display = "none";
+    document.getElementById("about").style.display =
+        "block";
 
-        document.getElementById("poems").style.display = "none";
+    document.getElementById("login").style.display =
+        "none";
 
-        document.getElementById("about").style.display = "none";
+    document.getElementById("adminPanel").style.display =
+        "none";
 
-        document.getElementById("reader").style.display = "none";
+    document.getElementById("reader").style.display =
+        "none";
 
-        if(currentUser && currentUser.email === ADMIN_EMAIL){
 
-            document.getElementById("login").style.display = "none";
+    window.location.hash = "about";
 
-            document.getElementById("adminPanel").style.display = "block";
 
-        }else{
+    setTimeout(() => {
 
-            document.getElementById("login").style.display = "block";
+        document
+            .getElementById("about")
+            .scrollIntoView({
+                behavior:"smooth"
+            });
 
-            document.getElementById("adminPanel").style.display = "none";
+    },100);
 
-        }
+};
 
-        window.location.hash = "login";
 
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
 
-    };
+/* ================= SHOW LOGIN ================= */
 
+window.showLogin = function(){
 
-    /* ================= OPEN POEM ================= */
+    document.getElementById("home").style.display =
+        "flex";
 
-    window.openPoem = function(id){
+    document.getElementById("index").style.display =
+        "none";
 
-        let poem = null;
+    document.getElementById("poems").style.display =
+        "none";
 
-        if(id === originalPoem.id){
+    document.getElementById("about").style.display =
+        "none";
 
-            poem = originalPoem;
+    document.getElementById("login").style.display =
+        "block";
 
-        }else{
+    document.getElementById("adminPanel").style.display =
+        "none";
 
-            poem = poems.find(p => p.id === id);
+    document.getElementById("reader").style.display =
+        "none";
 
-        }
 
-        if(!poem) return;
+    window.location.hash = "login";
 
-        document.getElementById("home").style.display = "none";
 
-        document.getElementById("index").style.display = "none";
+    setTimeout(() => {
 
-        document.getElementById("poems").style.display = "none";
+        document
+            .getElementById("login")
+            .scrollIntoView({
+                behavior:"smooth"
+            });
 
-        document.getElementById("about").style.display = "none";
+    },100);
 
-        document.getElementById("login").style.display = "none";
+};
 
-        document.getElementById("adminPanel").style.display = "none";
 
-        document.getElementById("reader").style.display = "block";
 
-        document.getElementById("readerTitle").textContent =
-            poem.title || "बिना शीर्षक";
+/* ================= INDEX POEMS ================= */
 
-        document.getElementById("readerContent").textContent =
-            poem.text || "";
+function getIndexPoems(){
 
-        window.location.hash = "reader";
+    return [
+        originalPoem,
+        ...poems
+    ];
 
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
+}
 
-    };
 
 
-    /* ================= BACK TO POEMS ================= */
+/* ================= FILTER ================= */
 
-    window.backToPoems = function(){
+function getFilteredIndexPoems(){
 
-        document.getElementById("reader").style.display = "none";
+    const input =
+        document.getElementById("indexSearch");
 
-        document.getElementById("home").style.display = "none";
 
-        document.getElementById("index").style.display = "none";
+    const query = input
 
-        document.getElementById("about").style.display = "none";
+        ? input.value
+            .trim()
+            .toLocaleLowerCase()
 
-        document.getElementById("login").style.display = "none";
+        : "";
 
-        document.getElementById("adminPanel").style.display = "none";
 
-        document.getElementById("poems").style.display = "block";
+    const allPoems =
+        getIndexPoems();
 
-        window.location.hash = "poems";
 
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
+    if(!query){
 
-    };
-
-
-    /* ================= RENDER POEMS ================= */
-
-    function renderPoems(){
-
-        const grid =
-            document.getElementById("poemGrid");
-
-        if(!grid) return;
-
-        grid.innerHTML = "";
-
-        const allPoems = [
-            originalPoem,
-            ...poems
-        ];
-
-        if(allPoems.length === 0){
-
-            grid.innerHTML = `
-                <div class="loading">
-                    अभी कोई रचना उपलब्ध नहीं है।
-                </div>
-            `;
-
-            return;
-
-        }
-
-        allPoems.forEach(poem => {
-
-            const card =
-                document.createElement("div");
-
-            card.className = "poem-card";
-
-            card.onclick = function(){
-
-                openPoem(poem.id);
-
-            };
-
-            const preview =
-                poem.text
-                    ? poem.text.substring(0, 180)
-                    : "";
-
-            card.innerHTML = `
-
-                <h3>
-                    ${escapeHTML(
-                        poem.title || "बिना शीर्षक"
-                    )}
-                </h3>
-
-                <div class="poem-preview">
-                    ${escapeHTML(preview)}
-                </div>
-
-                <span class="read-more">
-                    पूरी कविता पढ़ें →
-                </span>
-
-            `;
-
-            grid.appendChild(card);
-
-        });
+        return allPoems;
 
     }
 
 
-    /* ================= RENDER INDEX ================= */
+    return allPoems.filter(poem => {
 
-    function renderIndex(){
+        const title =
+            String(
+                poem.title || ""
+            ).toLocaleLowerCase();
 
-        const list =
-            document.getElementById("indexList");
 
-        if(!list) return;
+        const text =
+            String(
+                poem.text || ""
+            ).toLocaleLowerCase();
 
-        list.innerHTML = "";
 
-        const allPoems = [
-            originalPoem,
-            ...poems
-        ];
+        return (
 
-        if(allPoems.length === 0){
+            title.includes(query)
 
-            list.innerHTML = `
-                <div class="loading">
-                    अभी कोई रचना उपलब्ध नहीं है।
-                </div>
-            `;
+            ||
 
-            return;
+            text.includes(query)
+
+        );
+
+    });
+
+}
+
+
+
+/* ================= SEARCH ================= */
+
+window.searchIndexPoems = function(){
+
+    const input =
+        document.getElementById(
+            "indexSearch"
+        );
+
+
+    if(!input) return;
+
+
+    const query =
+        input.value.trim();
+
+
+    const clear =
+        document.getElementById(
+            "clearIndexSearch"
+        );
+
+
+    const result =
+        document.getElementById(
+            "indexSearchResult"
+        );
+
+
+    if(clear){
+
+        clear.style.display =
+            query
+                ? "block"
+                : "none";
+
+    }
+
+
+    const filtered =
+        getFilteredIndexPoems();
+
+
+    renderIndex(filtered);
+
+
+    if(result){
+
+        if(!query){
+
+            result.textContent = "";
 
         }
 
-        allPoems.forEach((poem, index) => {
+        else if(
+            filtered.length === 0
+        ){
+
+            result.textContent =
+                "कोई रचना नहीं मिली।";
+
+        }
+
+        else{
+
+            result.textContent =
+                `${filtered.length} ${
+                    filtered.length === 1
+                    ? "रचना"
+                    : "रचनाएँ"
+                } मिलीं`;
+
+        }
+
+    }
+
+};
+
+
+
+/* ================= CLEAR SEARCH ================= */
+
+window.clearIndexSearch = function(){
+
+    const input =
+        document.getElementById(
+            "indexSearch"
+        );
+
+
+    if(input){
+
+        input.value = "";
+
+    }
+
+
+    const clear =
+        document.getElementById(
+            "clearIndexSearch"
+        );
+
+
+    if(clear){
+
+        clear.style.display =
+            "none";
+
+    }
+
+
+    const result =
+        document.getElementById(
+            "indexSearchResult"
+        );
+
+
+    if(result){
+
+        result.textContent = "";
+
+    }
+
+
+    renderIndex();
+
+};
+
+
+
+/* ================= RENDER INDEX ================= */
+
+function renderIndex(
+    poemsToDisplay = null
+){
+
+    const list =
+        document.getElementById(
+            "indexList"
+        );
+
+
+    if(!list) return;
+
+
+    list.innerHTML = "";
+
+
+    const allPoems =
+
+        poemsToDisplay === null
+
+        ? getIndexPoems()
+
+        : poemsToDisplay;
+
+
+    if(
+        allPoems.length === 0
+    ){
+
+        list.innerHTML = `
+
+            <div class="no-search-result">
+
+                कोई रचना नहीं मिली।
+
+            </div>
+
+        `;
+
+        return;
+
+    }
+
+
+    allPoems.forEach(
+        (poem,index) => {
+
 
             const item =
-                document.createElement("div");
+                document.createElement(
+                    "div"
+                );
 
-            item.className = "index-item";
 
-            item.onclick = function(){
+            item.className =
+                "index-item";
 
-                openPoem(poem.id);
 
-            };
+            item.onclick =
+                function(){
+
+                    openPoem(
+                        poem.id
+                    );
+
+                };
+
 
             item.innerHTML = `
 
                 <span class="index-number">
-                    ${String(index + 1).padStart(2, "0")}
+
+                    ${
+                        String(
+                            index + 1
+                        ).padStart(
+                            2,
+                            "0"
+                        )
+                    }
+
                 </span>
+
 
                 <span class="index-title">
-                    ${escapeHTML(
-                        poem.title || "बिना शीर्षक"
-                    )}
+
+                    ${
+                        escapeHTML(
+                            poem.title ||
+                            "बिना शीर्षक"
+                        )
+                    }
+
                 </span>
+
 
                 <span class="index-arrow">
+
                     →
+
                 </span>
 
             `;
 
-            list.appendChild(item);
 
-        });
+            list.appendChild(
+                item
+            );
+
+        }
+    );
+
+}
+
+
+
+/* ================= RENDER POEMS ================= */
+
+function renderPoems(){
+
+    const grid =
+        document.getElementById(
+            "poemGrid"
+        );
+
+
+    if(!grid) return;
+
+
+    grid.innerHTML = "";
+
+
+    const allPoems = [
+
+        originalPoem,
+
+        ...poems
+
+    ];
+
+
+    if(
+        allPoems.length === 0
+    ){
+
+        grid.innerHTML = `
+
+            <div class="loading">
+
+                अभी कोई रचना उपलब्ध नहीं है।
+
+            </div>
+
+        `;
+
+        return;
 
     }
 
 
-    /* ================= LOGIN ================= */
+    allPoems.forEach(
+        poem => {
 
-    window.loginAdmin = async function(){
 
-        const email =
-            document.getElementById("loginEmail").value.trim();
-
-        const password =
-            document.getElementById("loginPassword").value;
-
-        const message =
-            document.getElementById("loginMessage");
-
-        message.textContent = "Login हो रहा है...";
-
-        try{
-
-            const result =
-                await signInWithEmailAndPassword(
-                    auth,
-                    email,
-                    password
+            const card =
+                document.createElement(
+                    "div"
                 );
 
-            if(result.user.email !== ADMIN_EMAIL){
 
-                await signOut(auth);
-
-                message.textContent =
-                    "यह account रचनाकार पैनल के लिए authorized नहीं है।";
-
-                return;
-
-            }
-
-            message.textContent =
-                "Login सफल रहा।";
-
-        }catch(error){
-
-            console.error(error);
-
-            message.textContent =
-                "Login failed: " + error.message;
-
-        }
-
-    };
+            card.className =
+                "poem-card";
 
 
-    /* ================= LOGOUT ================= */
+            card.onclick =
+                function(){
 
-    window.logoutAdmin = async function(){
+                    openPoem(
+                        poem.id
+                    );
 
-        try{
-
-            await signOut(auth);
-
-        }catch(error){
-
-            console.error(error);
-
-        }
-
-    };
+                };
 
 
-    /* ================= ADMIN RENDER ================= */
+            const preview =
+                (poem.text || "")
+                .slice(
+                    0,
+                    220
+                );
 
-    function renderAdminPoems(){
 
-        const container =
-            document.getElementById("adminPoems");
-
-        if(!container) return;
-
-        container.innerHTML = "";
-
-        if(poems.length === 0){
-
-            container.innerHTML = `
-                <div class="loading">
-                    अभी कोई अतिरिक्त रचना नहीं है।
-                </div>
-            `;
-
-            return;
-
-        }
-
-        poems.forEach(poem => {
-
-            const div =
-                document.createElement("div");
-
-            div.className = "admin-poem";
-
-            div.innerHTML = `
+            card.innerHTML = `
 
                 <h3>
-                    ${escapeHTML(
-                        poem.title || "बिना शीर्षक"
-                    )}
+
+                    ${
+                        escapeHTML(
+                            poem.title ||
+                            "बिना शीर्षक"
+                        )
+                    }
+
                 </h3>
 
+
                 <div class="poem-preview">
-                    ${escapeHTML(poem.text || "")}
-                </div>
 
-                <div class="admin-actions">
+                    ${
+                        escapeHTML(
+                            preview
+                        )
+                    }
 
-                    <button
-                        class="edit-btn"
-                        onclick="editPoem('${poem.id}')">
-                        Edit
-                    </button>
-
-                    <button
-                        class="delete-btn"
-                        onclick="deletePoem('${poem.id}')">
-                        Delete
-                    </button>
+                    ${
+                        (poem.text || "").length > 220
+                        ? "..."
+                        : ""
+                    }
 
                 </div>
+
+
+                <span class="read-more">
+
+                    पूरी कविता पढ़ें →
+
+                </span>
 
             `;
 
-            container.appendChild(div);
 
-        });
+            grid.appendChild(
+                card
+            );
+
+        }
+    );
+
+}
+
+
+
+/* ================= OPEN POEM ================= */
+
+window.openPoem = function(id){
+
+    let poem = null;
+
+
+    if(
+        id === originalPoem.id
+    ){
+
+        poem =
+            originalPoem;
+
+    }
+
+    else{
+
+        poem =
+            poems.find(
+                p => p.id === id
+            );
 
     }
 
 
-    /* ================= SAVE POEM ================= */
+    if(!poem) return;
 
-    window.savePoem = async function(){
 
-        if(!currentUser ||
-           currentUser.email !== ADMIN_EMAIL){
+    document.getElementById(
+        "home"
+    ).style.display = "none";
 
-            alert("पहले रचनाकार के रूप में Login करें।");
 
-            return;
+    document.getElementById(
+        "index"
+    ).style.display = "none";
 
-        }
+
+    document.getElementById(
+        "poems"
+    ).style.display = "none";
+
+
+    document.getElementById(
+        "about"
+    ).style.display = "none";
+
+
+    document.getElementById(
+        "login"
+    ).style.display = "none";
+
+
+    document.getElementById(
+        "adminPanel"
+    ).style.display = "none";
+
+
+    document.getElementById(
+        "reader"
+    ).style.display = "block";
+
+
+    document.getElementById(
+        "readerTitle"
+    ).textContent =
+        poem.title ||
+        "बिना शीर्षक";
+
+
+    document.getElementById(
+        "readerContent"
+    ).textContent =
+        poem.text || "";
+
+
+    window.location.hash =
+        "reader";
+
+
+    window.scrollTo({
+
+        top:0,
+
+        behavior:"smooth"
+
+    });
+
+};
+
+
+
+/* ================= BACK ================= */
+
+window.backToPoems = function(){
+
+    showPoems();
+
+};
+
+
+
+/* ================= LOGIN ================= */
+
+window.loginAdmin = async function(){
+
+    const email =
+        document.getElementById(
+            "adminEmail"
+        ).value.trim();
+
+
+    const password =
+        document.getElementById(
+            "adminPassword"
+        ).value;
+
+
+    const message =
+        document.getElementById(
+            "loginMessage"
+        );
+
+
+    if(
+        email !== ADMIN_EMAIL
+    ){
+
+        message.textContent =
+            "यह ईमेल रचनाकार के लिए अधिकृत नहीं है।";
+
+        return;
+
+    }
+
+
+    try{
+
+        await signInWithEmailAndPassword(
+            auth,
+            email,
+            password
+        );
+
+
+        message.textContent =
+            "";
+
+    }
+
+    catch(error){
+
+        console.error(
+            error
+        );
+
+
+        message.textContent =
+            "Login असफल हुआ। विवरण जाँचें।";
+
+    }
+
+};
+
+
+
+/* ================= LOGOUT ================= */
+
+window.logoutAdmin =
+    async function(){
+
+        await signOut(
+            auth
+        );
+
+    };
+
+
+
+/* ================= SAVE POEM ================= */
+
+window.savePoem =
+    async function(){
 
         const title =
-            document.getElementById("poemTitle")
-                .value.trim();
+            document.getElementById(
+                "poemTitle"
+            ).value.trim();
+
 
         const text =
-            document.getElementById("poemText")
-                .value.trim();
+            document.getElementById(
+                "poemText"
+            ).value.trim();
 
-        if(!title || !text){
 
-            alert("कविता का शीर्षक और कविता दोनों लिखें।");
+        if(
+            !title ||
+            !text
+        ){
+
+            alert(
+                "शीर्षक और कविता दोनों भरें।"
+            );
 
             return;
 
         }
+
 
         try{
 
             if(editingId){
 
                 await updateDoc(
-                    doc(db, "poems", editingId),
+
+                    doc(
+                        db,
+                        "poems",
+                        editingId
+                    ),
+
                     {
-                        title: title,
-                        text: text,
-                        updatedAt: serverTimestamp()
+
+                        title:title,
+
+                        text:text
+
                     }
-                );
 
-                editingId = null;
-
-                document.getElementById(
-                    "cancelEditBtn"
-                ).style.display = "none";
-
-            }else{
-
-                await addDoc(
-                    collection(db, "poems"),
-                    {
-                        title: title,
-                        text: text,
-                        createdAt: serverTimestamp()
-                    }
                 );
 
             }
 
-            document.getElementById("poemTitle").value = "";
+            else{
 
-            document.getElementById("poemText").value = "";
+                await addDoc(
 
-        }catch(error){
+                    collection(
+                        db,
+                        "poems"
+                    ),
 
-            console.error(error);
+                    {
 
-            alert(
-                "कविता save नहीं हो सकी: " +
-                error.message
-            );
+                        title:title,
+
+                        text:text,
+
+                        createdAt:
+                            Date.now()
+
+                    }
+
+                );
+
+            }
+
+
+            cancelEdit();
 
         }
 
-    };
+        catch(error){
+
+            console.error(
+                error
+            );
 
 
-    /* ================= EDIT POEM ================= */
-
-    window.editPoem = function(id){
-
-        const poem =
-            poems.find(p => p.id === id);
-
-        if(!poem) return;
-
-        document.getElementById("poemTitle").value =
-            poem.title || "";
-
-        document.getElementById("poemText").value =
-            poem.text || "";
-
-        editingId = id;
-
-        document.getElementById(
-            "cancelEditBtn"
-        ).style.display = "inline-block";
-
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
-
-    };
-
-
-    /* ================= CANCEL EDIT ================= */
-
-    window.cancelEdit = function(){
-
-        editingId = null;
-
-        document.getElementById("poemTitle").value = "";
-
-        document.getElementById("poemText").value = "";
-
-        document.getElementById(
-            "cancelEditBtn"
-        ).style.display = "none";
-
-    };
-
-
-    /* ================= DELETE POEM ================= */
-
-    window.deletePoem = async function(id){
-
-        if(!currentUser ||
-           currentUser.email !== ADMIN_EMAIL){
-
-            alert("Unauthorized");
+            alert(                "शीर्षक और कविता दोनों भरें।"
+            );
 
             return;
 
         }
 
-        const confirmDelete =
-            confirm("क्या आप यह कविता delete करना चाहते हैं?");
-
-        if(!confirmDelete) return;
 
         try{
 
-            await deleteDoc(
-                doc(db, "poems", id)
+            if(editingId){
+
+                await updateDoc(
+
+                    doc(
+                        db,
+                        "poems",
+                        editingId
+                    ),
+
+                    {
+
+                        title:title,
+
+                        text:text
+
+                    }
+
+                );
+
+            }
+
+            else{
+
+                await addDoc(
+
+                    collection(
+                        db,
+                        "poems"
+                    ),
+
+                    {
+
+                        title:title,
+
+                        text:text,
+
+                        createdAt:
+                            Date.now()
+
+                    }
+
+                );
+
+            }
+
+
+            cancelEdit();
+
+        }
+
+        catch(error){
+
+            console.error(
+                error
             );
 
-        }catch(error){
-
-            console.error(error);
 
             alert(
-                "कविता delete नहीं हो सकी: " +
-                error.message
+                "रचना सहेजने में समस्या आई।"
             );
 
         }
@@ -1662,73 +2647,322 @@
     };
 
 
-    /* ================= AUTH STATE ================= */
 
-    onAuthStateChanged(auth, user => {
+/* ================= EDIT POEM ================= */
 
-        currentUser = user;
+window.editPoem = function(id){
 
-        if(user &&
-           user.email === ADMIN_EMAIL){
-
-            document.getElementById(
-                "login"
-            ).style.display = "none";
-
-            document.getElementById(
-                "adminPanel"
-            ).style.display = "block";
-
-        }else{
-
-            document.getElementById(
-                "adminPanel"
-            ).style.display = "none";
-
-        }
-
-    });
+    const poem =
+        poems.find(
+            p => p.id === id
+        );
 
 
-    /* ================= FIRESTORE ================= */
+    if(!poem) return;
 
-    onSnapshot(
-        collection(db, "poems"),
-        snapshot => {
 
-            poems = snapshot.docs.map(
-                document => ({
-                    id: document.id,
-                    ...document.data()
-                })
-            );
+    editingId = id;
 
-            renderPoems();
 
-            renderIndex();
+    document.getElementById(
+        "poemTitle"
+    ).value =
+        poem.title || "";
 
-            renderAdminPoems();
 
-        },
-        error => {
+    document.getElementById(
+        "poemText"
+    ).value =
+        poem.text || "";
 
-            console.error(
-                "Firestore Error:",
-                error
+
+    document.getElementById(
+        "savePoemBtn"
+    ).textContent =
+        "रचना अपडेट करें";
+
+};
+
+
+
+/* ================= CANCEL EDIT ================= */
+
+window.cancelEdit = function(){
+
+    editingId = null;
+
+
+    document.getElementById(
+        "poemTitle"
+    ).value =
+        "";
+
+
+    document.getElementById(
+        "poemText"
+    ).value =
+        "";
+
+
+    document.getElementById(
+        "savePoemBtn"
+    ).textContent =
+        "रचना सहेजें";
+
+};
+
+
+
+/* ================= DELETE POEM ================= */
+
+window.deletePoem = async function(id){
+
+    if(
+        !confirm(
+            "क्या आप इस रचना को हटाना चाहते हैं?"
+        )
+    ){
+
+        return;
+
+    }
+
+
+    try{
+
+        await deleteDoc(
+
+            doc(
+                db,
+                "poems",
+                id
+            )
+
+        );
+
+    }
+
+    catch(error){
+
+        console.error(
+            error
+        );
+
+
+        alert(
+            "रचना हटाने में समस्या आई।"
+        );
+
+    }
+
+};
+
+
+
+/* ================= ADMIN POEMS ================= */
+
+function renderAdminPoems(){
+
+    const box =
+        document.getElementById(
+            "adminPoems"
+        );
+
+
+    if(!box) return;
+
+
+    box.innerHTML = "";
+
+
+    poems.forEach(
+        poem => {
+
+
+            const item =
+                document.createElement(
+                    "div"
+                );
+
+
+            item.className =
+                "admin-poem";
+
+
+            item.innerHTML = `
+
+                <strong>
+
+                    ${
+                        escapeHTML(
+                            poem.title ||
+                            "बिना शीर्षक"
+                        )
+                    }
+
+                </strong>
+
+
+                <div class="admin-actions">
+
+
+                    <button
+                        class="edit-btn"
+                        onclick="editPoem('${poem.id}')">
+
+                        Edit
+
+                    </button>
+
+
+                    <button
+                        class="delete-btn"
+                        onclick="deletePoem('${poem.id}')">
+
+                        Delete
+
+                    </button>
+
+
+                </div>
+
+            `;
+
+
+            box.appendChild(
+                item
             );
 
         }
     );
 
+}
 
-    /* ================= INITIAL RENDER ================= */
 
-    renderPoems();
 
-    renderIndex();
+/* ================= AUTH STATE ================= */
+
+onAuthStateChanged(
+    auth,
+    user => {
+
+        if(
+            user &&
+            user.email === ADMIN_EMAIL
+        ){
+
+            document.getElementById(
+                "login"
+            ).style.display =
+                "none";
+
+
+            document.getElementById(
+                "adminPanel"
+            ).style.display =
+                "block";
+
+
+            renderAdminPoems();
+
+        }
+
+        else{
+
+            document.getElementById(
+                "adminPanel"
+            ).style.display =
+                "none";
+
+        }
+
+    }
+
+);
+
+
+
+/* ================= FIRESTORE ================= */
+
+onSnapshot(
+
+    collection(
+        db,
+        "poems"
+    ),
+
+    snapshot => {
+
+        poems =
+            snapshot.docs.map(
+                document => ({
+
+                    id:
+                        document.id,
+
+                    ...document.data()
+
+                })
+            );
+
+
+        renderPoems();
+
+
+        const searchInput =
+            document.getElementById(
+                "indexSearch"
+            );
+
+
+        const hasSearch =
+            searchInput &&
+            searchInput.value.trim();
+
+
+        renderIndex(
+
+            hasSearch
+
+                ? getFilteredIndexPoems()
+
+                : null
+
+        );
+
+
+        renderAdminPoems();
+
+    },
+
+
+    error => {
+
+        console.error(
+            "Firestore Error:",
+            error
+        );
+
+    }
+
+);
+
+
+
+/* ================= INITIAL RENDER ================= */
+
+renderPoems();
+
+renderIndex();
+
+showHome();
+
+
 
 </script>
 
+
 </body>
+
 </html>
-  
+            
