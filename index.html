@@ -3766,11 +3766,13 @@ function formatPoem(
 }
 
 
-/* =========================================================
-   FLOATING HINDI LETTERS
-========================================================= */
+<script>
 
-(function(){
+document.addEventListener("DOMContentLoaded", function(){
+
+    /* =========================================================
+       FLOATING HINDI LETTERS
+    ========================================================= */
 
     const container =
         document.getElementById("floatingHindiLetters");
@@ -3825,8 +3827,6 @@ function formatPoem(
             ];
 
 
-        /* Horizontal positions */
-
         const startX =
             random(-15,105);
 
@@ -3836,8 +3836,6 @@ function formatPoem(
         const endX =
             middleX + random(-12,12);
 
-
-        /* Animation settings */
 
         const duration =
             random(18,34);
@@ -3916,7 +3914,7 @@ function formatPoem(
 
     }
 
-})();
+});
     
 </script>
 
