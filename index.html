@@ -3862,61 +3862,68 @@ document.addEventListener("DOMContentLoaded", function(){
         letter.style.setProperty(
             "--start-x",
             startX + "vw"
-        );
 
-        letter.style.setProperty(
-            "--middle-x",
-            middleX + "vw"
-        );
+<script>
+window.addEventListener("load", function () {
 
-        letter.style.setProperty(
-            "--end-x",
-            endX + "vw"
-        );
+    const container =
+        document.getElementById("floatingHindiLetters");
 
-        letter.style.setProperty(
-            "--duration",
-            duration + "s"
-        );
+    if (!container) return;
 
-        letter.style.setProperty(
-            "--delay",
-            delay + "s"
-        );
+    const characters = [
+        "अ","आ","इ","ई","उ","ऊ",
+        "ए","ऐ","ओ","औ",
+        "क","ख","ग","घ",
+        "च","छ","ज","झ",
+        "ट","ठ","ड","ढ",
+        "त","थ","द","ध",
+        "न","प","फ","ब","भ",
+        "म","य","र","ल","व",
+        "श","ष","स","ह",
+        "शब्द","काव्य","भाव","मौन",
+        "स्मृति","स्वप्न","विचार","अनुभूति"
+    ];
 
-        letter.style.setProperty(
-            "--opacity",
-            opacity
-        );
+    for (let i = 0; i < (window.innerWidth <= 600 ? 14 : 24); i++) {
 
-        letter.style.setProperty(
-            "--blur",
-            blur + "px"
-        );
+        const letter = document.createElement("span");
 
-        letter.style.setProperty(
-            "--rotate-start",
-            rotateStart + "deg"
-        );
+        letter.className = "floating-letter";
 
-        letter.style.setProperty(
-            "--rotate-middle",
-            rotateMiddle + "deg"
-        );
+        letter.textContent =
+            characters[
+                Math.floor(Math.random() * characters.length)
+            ];
 
-        letter.style.setProperty(
-            "--rotate-end",
-            rotateEnd + "deg"
-        );
+        const random = (min, max) =>
+            Math.random() * (max - min) + min;
 
+        const start = random(-15, 105);
+        const middle = start + random(-12, 12);
+        const end = middle + random(-12, 12);
+
+        letter.style.setProperty("--start-x", start + "vw");
+        letter.style.setProperty("--middle-x", middle + "vw");
+        letter.style.setProperty("--end-x", end + "vw");
+
+        letter.style.setProperty("--duration", random(18, 34) + "s");
+        letter.style.setProperty("--delay", random(-34, 0) + "s");
+        letter.style.setProperty("--opacity", random(0.035, 0.10));
+        letter.style.setProperty("--blur", random(0, 1.8) + "px");
+
+        letter.style.setProperty("--rotate-start", random(-15, 15) + "deg");
+        letter.style.setProperty("--rotate-middle", random(-25, 25) + "deg");
+        letter.style.setProperty("--rotate-end", random(-15, 15) + "deg");
 
         container.appendChild(letter);
-
     }
 
 });
-    
+        
 </script>
+
+<div id="floatingHindiLetters" aria-hidden="true"></div>
 
 <!-- =========================================================
      FLOATING HINDI LETTERS
