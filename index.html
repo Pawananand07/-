@@ -654,51 +654,182 @@ section{
     background:#efe5d4;
 }
 
+/* =========================================================
+   PREMIUM POEM CARDS
+========================================================= */
+
 .poem-grid{
     display:grid;
-
-    grid-template-columns:
-        repeat(auto-fit,minmax(280px,1fr));
-
-    gap:25px;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:28px;
 }
 
+
+/* CARD */
+
 .poem-card{
-    background:#fffaf1;
+    position:relative;
+    overflow:hidden;
 
-    border:
-        1px solid #dfcdb0;
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.96),
+            rgba(255,250,241,0.98)
+        );
 
-    border-radius:12px;
+    border:1px solid rgba(183,134,77,0.28);
+    border-radius:18px;
 
-    padding:25px;
+    padding:30px 28px 26px;
 
     cursor:pointer;
 
-    transition:0.3s;
-
     box-shadow:
-        0 4px 12px
-        rgba(70,40,20,0.08);
+        0 8px 25px rgba(70,40,20,0.07),
+        0 2px 6px rgba(70,40,20,0.04);
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
+
+    isolation:isolate;
 }
+
+
+/* Elegant top line */
+
+.poem-card::before{
+    content:"";
+
+    position:absolute;
+    top:0;
+    left:28px;
+    right:28px;
+
+    height:2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #b7864d,
+            transparent
+        );
+
+    opacity:0.65;
+
+    transition:
+        left 0.35s ease,
+        right 0.35s ease,
+        opacity 0.35s ease;
+}
+
+
+/* Literary watermark */
+
+.poem-card::after{
+    content:"❦";
+
+    position:absolute;
+
+    right:18px;
+    bottom:5px;
+
+    font-size:72px;
+
+    color:#b7864d;
+
+    opacity:0.055;
+
+    font-family:serif;
+
+    pointer-events:none;
+
+    transform:rotate(-8deg);
+
+    transition:
+        opacity 0.35s ease,
+        transform 0.35s ease;
+}
+
+
+/* HOVER */
 
 .poem-card:hover{
-    transform:translateY(-5px);
+    transform:translateY(-8px);
+
+    border-color:rgba(167,117,60,0.55);
 
     box-shadow:
-        0 8px 20px
-        rgba(70,40,20,0.15);
+        0 18px 38px rgba(70,40,20,0.13),
+        0 5px 12px rgba(70,40,20,0.06);
 }
+
+
+.poem-card:hover::before{
+    left:18px;
+    right:18px;
+    opacity:1;
+}
+
+
+.poem-card:hover::after{
+    opacity:0.10;
+    transform:rotate(0deg) scale(1.08);
+}
+
+
+/* TITLE */
 
 .poem-card h3{
+    position:relative;
+
     color:#4b2c1c;
 
-    margin-bottom:12px;
+    margin:0 0 16px;
 
     font-size:24px;
+    line-height:1.35;
+
+    font-weight:700;
+
+    letter-spacing:0.2px;
 }
 
+
+/* Decorative line */
+
+.poem-card h3::after{
+    content:"";
+
+    display:block;
+
+    width:38px;
+    height:1px;
+
+    margin-top:9px;
+
+    background:#b7864d;
+
+    opacity:0.65;
+
+    transition:
+        width 0.3s ease;
+}
+
+
+.poem-card:hover h3::after{
+    width:62px;
+}
+
+
+/* POEM PREVIEW */
+
 .poem-preview{
+    position:relative;
+
     white-space:pre-line;
 
     color:#654c3a;
@@ -706,16 +837,115 @@ section{
     max-height:150px;
 
     overflow:hidden;
+
+    font-size:16px;
+
+    line-height:1.85;
+
+    letter-spacing:0.1px;
+
+    padding-bottom:8px;
 }
 
+
+/* Preview fade */
+
+.poem-preview::after{
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    right:0;
+    bottom:0;
+
+    height:45px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(255,250,241,0),
+            rgba(255,250,241,1)
+        );
+
+    pointer-events:none;
+}
+
+
+/* READ MORE */
+
 .read-more{
-    display:inline-block;
+    position:relative;
 
-    margin-top:15px;
+    display:inline-flex;
+    align-items:center;
+    gap:7px;
 
-    color:#9b6634;
+    margin-top:18px;
 
-    font-weight:bold;
+    color:#8c5c2d;
+
+    font-weight:700;
+
+    font-size:15px;
+
+    text-decoration:none;
+
+    transition:
+        color 0.25s ease,
+        gap 0.25s ease;
+}
+
+
+.read-more::after{
+    content:"→";
+
+    font-size:17px;
+
+    transition:
+        transform 0.25s ease;
+}
+
+
+.poem-card:hover .read-more{
+    color:#5d351f;
+    gap:10px;
+}
+
+
+.poem-card:hover .read-more::after{
+    transform:translateX(3px);
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:600px){
+
+    .poem-grid{
+        grid-template-columns:1fr;
+        gap:20px;
+    }
+
+    .poem-card{
+        padding:25px 22px 23px;
+        border-radius:16px;
+    }
+
+    .poem-card h3{
+        font-size:22px;
+    }
+
+    .poem-preview{
+        font-size:15.5px;
+        line-height:1.8;
+    }
+
+    .poem-card:hover{
+        transform:translateY(-4px);
+    }
 }
 
 
