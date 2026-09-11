@@ -31,7 +31,7 @@
 <style>
 
 /* =========================================================
-   FLOATING HINDI LETTERS — LITERARY BACKGROUND
+   FLOATING HINDI WORDS
 ========================================================= */
 
 #floatingHindiLetters{
@@ -47,11 +47,11 @@
 
     z-index:0;
 
-    opacity:0.55;
+    opacity:1;
 }
 
 
-/* Individual letters */
+/* FLOATING LETTER / WORD */
 
 .floating-letter{
     position:absolute;
@@ -69,9 +69,9 @@
 
     opacity:0;
 
-    user-select:none;
-
     white-space:nowrap;
+
+    user-select:none;
 
     animation:
         hindiFlow var(--duration) linear infinite;
@@ -79,13 +79,10 @@
     animation-delay:var(--delay);
 
     filter:blur(var(--blur));
-
-    transform:translate3d(0,0,0);
-
 }
 
 
-/* Slow flowing movement */
+/* FLOW ANIMATION */
 
 @keyframes hindiFlow{
 
@@ -133,29 +130,29 @@
 }
 
 
-/* Keep website content above the letters */
+/* MOBILE */
 
-header,
-main,
-section,
-footer{
-    position:relative;
-    z-index:1;
+@media(max-width:600px){
+
+    #floatingHindiLetters{
+        opacity:0.7;
+    }
+
+    .floating-letter{
+        font-size:22px;
+    }
 }
 
+    
+/* REDUCED MOTION */
 
-/* Respect reduced-motion preference */
-
-@media (prefers-reduced-motion:reduce){
+@media(prefers-reduced-motion:reduce){
 
     #floatingHindiLetters{
         display:none;
     }
-
 }
 
-
-/* Mobile — softer animation */
 
 @media(max-width:600px){
 
