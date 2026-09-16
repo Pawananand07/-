@@ -1838,6 +1838,53 @@ footer strong{
 
 }
 
+/* =========================================================
+   CONTENT PROTECTION
+========================================================= */
+
+.poem-text,
+.poem-content,
+.reader-content,
+.poem-card {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+
+/* Images ko drag karna disable */
+img {
+    -webkit-user-drag: none;
+    user-drag: none;
+}
+
+/* Reading Mode watermark */
+.reader-content::after {
+    content: "पवन आनंद • काव्य पवन";
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(-25deg);
+    font-size: 42px;
+    letter-spacing: 3px;
+    opacity: 0.035;
+    pointer-events: none;
+    white-space: nowrap;
+    z-index: 0;
+}
+
+/* Copyright notice */
+.copyright-notice {
+    margin: 25px auto;
+    padding: 15px 18px;
+    max-width: 700px;
+    text-align: center;
+    font-size: 13px;
+    line-height: 1.7;
+    opacity: 0.7;
+    border-top: 1px solid rgba(120,80,40,.18);
+    border-bottom: 1px solid rgba(120,80,40,.18);
+}
+    
 </style>
 
 </head>
@@ -2081,9 +2128,8 @@ footer strong{
         <p>
             मेरी साहित्यिक अभिव्यक्ति “काव्य पवन” इन्हीं 
             प्रवाहित विचारों और भावनाओं को शब्द देने का 
-            एक विनम्र प्रयास है—जहाँ मन में उठते विचार और 
-            अनुभूतियाँ कविताओं का रूप धारण कर भावनाओं 
-              के साथ अनंत तक बहती चली जाती हैं।
+             एक विनम्र प्रयास है—जहाँ मन में उठते विचार 
+            और अनुभूतियाँ कविताओं का रूप धारण करती हैं।
         </p>
 
         <p>
@@ -2094,7 +2140,17 @@ footer strong{
         </p>
 
     </div>
+    
+<div class="copyright-notice">
 
+    <strong>© पवन आनंद</strong><br>
+
+    ‘काव्य पवन’ पर प्रकाशित रचनाएँ लेखक की मौलिक
+    साहित्यिक अभिव्यक्तियाँ हैं। बिना लेखक की अनुमति
+    इनके पुनर्प्रकाशन या व्यावसायिक उपयोग से बचें।
+
+</div>
+    
 </section>
 
 
@@ -3633,6 +3689,117 @@ function formatPoem(
 
 </script>
 
+<!-- =========================================================
+     CONTENT PROTECTION
+========================================================= -->
+
+<script>
+(function () {
+
+    /* =========================================
+       RIGHT CLICK DISABLE
+    ========================================= */
+
+    document.addEventListener("contextmenu", function (e) {
+        e.preventDefault();
+    });
+
+
+    /* =========================================
+       DRAGGING DISABLE
+    ========================================= */
+
+    document.addEventListener("dragstart", function (e) {
+        e.preventDefault();
+    });
+
+
+    /* =========================================
+       COPY PROTECTION + AUTHOR ATTRIBUTION
+    ========================================= */
+
+    document.addEventListener("copy", function (e) {
+
+        const selection = window.getSelection();
+
+        if (!selection || selection.isCollapsed) return;
+
+        const selectedText = selection.toString().trim();
+
+        if (!selectedText) return;
+
+        const attribution =
+            "\n\n— पवन आनंद | काव्य पवन";
+
+        e.clipboardData.setData(
+            "text/plain",
+            selectedText + attribution
+        );
+
+        e.preventDefault();
+    });
+
+
+    /* =========================================
+       CUT DISABLE
+    ========================================= */
+
+    document.addEventListener("cut", function (e) {
+        e.preventDefault();
+    });
+
+
+    /* =========================================
+       COMMON COPY SHORTCUTS
+    ========================================= */
+
+    document.addEventListener("keydown", function (e) {
+
+        const key = e.key.toLowerCase();
+
+        /* Ctrl+C / Ctrl+X */
+        if (
+            (e.ctrlKey || e.metaKey) &&
+            (key === "c" || key === "x")
+        ) {
+            e.preventDefault();
+        }
+
+        /* Ctrl+S */
+        if (
+            (e.ctrlKey || e.metaKey) &&
+            key === "s"
+        ) {
+            e.preventDefault();
+        }
+
+        /* Ctrl+U */
+        if (
+            (e.ctrlKey || e.metaKey) &&
+            key === "u"
+        ) {
+            e.preventDefault();
+        }
+
+        /* F12 */
+        if (e.key === "F12") {
+            e.preventDefault();
+        }
+
+        /* Ctrl + Shift + I/J/C */
+        if (
+            (e.ctrlKey || e.metaKey) &&
+            e.shiftKey &&
+            ["i", "j", "c"].includes(key)
+        ) {
+            e.preventDefault();
+        }
+
+    });
+
+})();
+</script>
+    
 </body>
 
 </html>
